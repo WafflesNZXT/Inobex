@@ -103,6 +103,47 @@ if (contactForm) {
     });
 }
 
+// Counter animation for stat numbers
+function animateCounter(element) {
+    if (element.classList.contains('animated')) return;
+    
+    const target = parseInt(element.getAttribute('data-target'));
+    const suffix = element.getAttribute('data-suffix') || '';
+    const duration = 2500; // milliseconds
+    const increment = target / (duration / 10); // 20ms per frame (~60fps)
+    
+    let current = 0;
+    
+    function updateCounter() {
+        current += increment;
+        
+        if (current >= target) {
+            element.textContent = target + suffix;
+            element.classList.add('animated');
+        } else {
+            element.textContent = Math.floor(current) + suffix;
+            requestAnimationFrame(updateCounter);
+        }
+    }
+    
+    updateCounter();
+}
+
+// Observe counter elements
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            if (!entry.target.hasAttribute('data-no-animate')) {
+                animateCounter(entry.target);
+            }
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.counter').forEach(el => {
+    counterObserver.observe(el);
+});
+
 // Typewriter effect for hero subtitle
 const heroSubtitle = document.querySelector('.hero-subtitle');
 if (heroSubtitle) {

@@ -51,12 +51,26 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.8rem;
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary);
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(1.1);
+    transition: filter 0.3s ease;
+    background: transparent !important;
+    image-rendering: high-quality;
+}
+
+.logo:hover .logo-img {
+    filter: brightness(1.3);
 }
 
 .logo-icon {
@@ -623,6 +637,21 @@ body {
     border-top: 1px solid var(--border-color);
     padding: 2rem;
     text-align: center;
+}
+
+.footer-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    filter: brightness(1.1);
+    transition: filter 0.3s ease;
+    background: transparent !important;
+    image-rendering: high-quality;
+}
+
+.footer:hover .footer-logo {
+    filter: brightness(1.3);
 }
 
 .footer-content p {
