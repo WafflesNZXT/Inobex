@@ -3,12 +3,12 @@
     --primary-dark: #00a8cc;
     --secondary: #ff006e;
     --accent: #8338ec;
-    --dark-bg: #0f0f0f;
-    --darker-bg: #1a1a1a;
-    --card-bg: #242424;
-    --text-light: #e0e0e0;
-    --text-muted: #888888;
-    --border-color: #333333;
+    --dark-bg: #040407;
+    --darker-bg: #1f2736;
+    --card-bg: #2d3547;
+    --text-light: #f0f0f0;
+    --text-muted: #a0a0a0;
+    --border-color: #424856;
 }
 
 * {
@@ -114,6 +114,80 @@ body {
     background: var(--primary);
     margin: 5px 0;
     transition: 0.3s;
+}
+
+/* Navbar Get Started Button */
+.nav-cta-button {
+    position: relative;
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border: none;
+    color: var(--dark-bg);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+    text-decoration: none !important;
+    display: inline-block;
+    clip-path: polygon(
+        0 0,
+        calc(100% - 8px) 0,
+        100% 8px,
+        100% calc(100% - 8px),
+        calc(100% - 8px) 100%,
+        8px 100%,
+        0 calc(100% - 8px)
+    );
+}
+
+.nav-cta-button::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
+}
+
+.nav-cta-button::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: -8px;
+    width: 16px;
+    height: 16px;
+    background: var(--primary);
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.nav-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 217, 255, 0.5), 0 0 30px rgba(131, 56, 236, 0.3);
+    text-decoration: none !important;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+}
+
+.nav-cta-button:hover::before {
+    animation: cornerGlow 0.6s ease-in-out infinite;
+}
+
+.nav-cta-button:hover::after {
+    animation: cornerGlow 0.6s ease-in-out infinite 0.2s;
+}
+
+@keyframes cornerGlow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
 }
 
 /* Corner Triangles */
@@ -248,6 +322,7 @@ body {
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
+    text-decoration: none;
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -622,22 +697,8 @@ body {
     position: relative;
 }
 
-.banner-link:after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--primary);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-}
-
-.banner-link:hover:after {
-    transform: scaleX(1);
-    transform-origin: left;
+.banner-link:hover {
+    color: var(--accent);
 }
 
 /* Examples Section */
@@ -880,6 +941,7 @@ body {
 .faq-section {
     padding: 5rem 2rem;
     background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .faq-container {
@@ -907,7 +969,8 @@ body {
     border: none;
     color: var(--text-light);
     font-size: 1rem;
-    font-family: 'Courier New', monospace;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -936,7 +999,7 @@ body {
     padding: 1.5rem;
     background: rgba(0, 217, 255, 0.05);
     border-top: 1px solid var(--border-color);
-    color: var(--text-muted);
+    color: var(--text-light);
     line-height: 1.8;
 }
 
@@ -1019,6 +1082,10 @@ body {
 
     .logo-icon {
         font-size: 1.5rem;
+    }
+
+    .nav-cta-button {
+        display: none !important;
     }
 
     .nav-menu {
@@ -1128,6 +1195,10 @@ body {
 
     .example-text p {
         font-size: 0.95rem;
+    }
+
+    .feature-list li {
+        padding-left: 1.5rem;
     }
 
     /* Features Section */
@@ -1389,6 +1460,11 @@ body {
     .feature-list li {
         font-size: 0.9rem;
         padding: 0.3rem 0;
+        padding-left: 1.2rem;
+    }
+
+    .feature-list li:before {
+        font-size: 0.9rem;
     }
 
     .code-block {
