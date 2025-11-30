@@ -22,7 +22,7 @@ html {
 }
 
 body {
-    font-family: 'Courier New', monospace;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: var(--dark-bg);
     color: var(--text-light);
     overflow-x: hidden;
