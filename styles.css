@@ -1,8 +1,18 @@
 :root {
-    --primary: #00d9ff;
-    --primary-dark: #00a8cc;
+    --primary: #0099cc;
+    --primary-dark: #0077a3;
     --secondary: #ff006e;
-    --accent: #8338ec;
+    --accent: #6b2fb0;
+    --dark-bg: #ffffff;
+    --darker-bg: #f5f5f5;
+    --card-bg: #f9f9f9;
+    --text-light: #1a1a1a;
+    --text-muted: #666666;
+    --border-color: #e0e0e0;
+}
+
+/* Dark mode theme */
+body.dark-mode {
     --dark-bg: #040407;
     --darker-bg: #1f2736;
     --card-bg: #2d3547;
@@ -33,10 +43,16 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(15, 15, 15, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1001;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .navbar {
+    background: rgba(15, 15, 15, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .nav-container {
@@ -130,13 +146,36 @@ body {
     transition: 0.3s;
 }
 
+/* Dark Mode Toggle Button */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    cursor: pointer;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+}
+
+.theme-toggle:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.05);
+}
+
 /* Navbar Get Started Button */
 .nav-cta-button {
     position: relative;
     padding: 0.7rem 1.5rem;
     background: linear-gradient(135deg, var(--primary), var(--accent));
     border: none;
-    color: var(--dark-bg);
+    color: white;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -268,9 +307,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 50%, var(--dark-bg) 100%);
+    background: linear-gradient(135deg, #f0f4f8 0%, #e8ecf1 50%, #f0f4f8 100%);
     overflow: hidden;
     margin-top: 60px;
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 50%, var(--dark-bg) 100%);
 }
 
 .hero::before {
@@ -280,11 +323,15 @@ body {
     height: 500px;
     background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
     border-radius: 50%;
-    opacity: 0.05;
+    opacity: 0.08;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation: pulse 8s ease-in-out infinite;
+}
+
+body.dark-mode .hero::before {
+    opacity: 0.05;
 }
 
 @keyframes pulse {
@@ -748,9 +795,14 @@ body {
     align-items: center;
     margin-bottom: 4rem;
     padding: 2rem;
+    background: rgba(240, 244, 248, 0.8);
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+body.dark-mode .example-item {
     background: rgba(36, 36, 36, 0.5);
     border: 1px solid var(--border-color);
-    border-radius: 10px;
 }
 
 .example-item.reverse {
@@ -889,9 +941,15 @@ body {
 }
 
 .example-text p {
-    color: var(--text-muted);
+    color: #555555;
     line-height: 1.8;
     margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+body.dark-mode .example-text p {
+    color: var(--text-muted);
+    font-weight: normal;
 }
 
 .feature-list {
@@ -901,10 +959,16 @@ body {
 }
 
 .feature-list li {
-    color: var(--text-light);
+    color: #333333;
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
+    font-weight: 500;
+}
+
+body.dark-mode .feature-list li {
+    color: var(--text-light);
+    font-weight: normal;
 }
 
 .feature-list li:before {
@@ -1115,6 +1179,10 @@ body {
 
     .nav-cta-button {
         display: none !important;
+    }
+
+    .theme-toggle {
+        margin-right: 0.5rem;
     }
 
     .nav-menu {
