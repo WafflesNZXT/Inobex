@@ -346,14 +346,13 @@ body.dark-mode .hero::before {
 }
 
 .glitch {
-    font-size: 4rem;
+    font-size: 10rem;
     font-weight: bold;
     color: var(--primary);
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 1rem;
     position: relative;
-    animation: glitch 3s ease-in-out infinite;
 }
 
 @keyframes glitch {
@@ -362,14 +361,14 @@ body.dark-mode .hero::before {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: var(--accent);
     margin-bottom: 1rem;
     letter-spacing: 2px;
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color: var(--text-muted);
     margin-bottom: 2rem;
     max-width: 600px;
