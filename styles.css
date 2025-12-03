@@ -2237,6 +2237,7 @@ body.dark-mode .feature-list li {
 .pricing {
     padding: 4rem 2rem;
     background: var(--bg-color);
+    margin-top: 60px;
 }
 
 .pricing-content {
