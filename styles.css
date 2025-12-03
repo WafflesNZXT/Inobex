@@ -375,6 +375,8 @@ body.dark-mode .hero::before {
     position: relative;
     z-index: 10;
     text-align: center;
+    max-width: 90%;
+    padding: 0 1rem;
 }
 
 .glitch {
@@ -1592,10 +1594,16 @@ body.dark-mode .feature-list li {
         gap: 1rem;
     }
 
-    .cta-button {
+    .cta-buttons .cta-button {
         width: 100%;
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
+    }
+
+    .hero-content .cta-button {
+        width: auto;
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
     }
 
     .section-title {
@@ -1677,6 +1685,12 @@ body.dark-mode .feature-list li {
         padding: 0 1rem;
     }
 
+    .hero-content .cta-button {
+        padding: 0.9rem 2rem;
+        font-size: 0.9rem;
+        width: auto;
+    }
+
     .tech-grid {
         gap: 15px;
     }
@@ -1686,10 +1700,10 @@ body.dark-mode .feature-list li {
         height: 10px;
     }
 
-    .cta-button {
-        padding: 0.9rem 2rem;
-        font-size: 0.9rem;
-        width: auto;
+    .cta-buttons .cta-button {
+        width: 100%;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
     }
 
     /* Featured Banner */
