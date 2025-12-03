@@ -273,25 +273,36 @@ document.querySelectorAll('.counter').forEach(el => {
     counterObserver.observe(el);
 });
 
-// Loading screen percentage animation
-window.addEventListener('load', () => {
-    const percentageValue = document.getElementById('percentageValue');
+// Loading screen - only show on first visit
+document.addEventListener('DOMContentLoaded', () => {
     const loadingScreen = document.getElementById('loadingScreen');
+    const hasVisited = sessionStorage.getItem('inobex-visited');
     
-    if (percentageValue && loadingScreen) {
-        let percentage = 0;
-        const totalDuration = 3500; // 3.5 seconds in milliseconds
-        const interval = 100; // Update every 100ms
-        const increment = 100 / (totalDuration / interval);
+    if (hasVisited && loadingScreen) {
+        // Hide loading screen immediately if already visited
+        loadingScreen.style.display = 'none';
+    } else if (!hasVisited) {
+        // Mark that user has visited
+        sessionStorage.setItem('inobex-visited', 'true');
         
-        const percentageInterval = setInterval(() => {
-            percentage += increment;
-            if (percentage >= 100) {
-                percentage = 100;
-                clearInterval(percentageInterval);
-            }
-            percentageValue.textContent = Math.floor(percentage);
-        }, interval);
+        // Animate percentage
+        const percentageValue = document.getElementById('percentageValue');
+        
+        if (percentageValue) {
+            let percentage = 0;
+            const totalDuration = 3500; // 3.5 seconds in milliseconds
+            const interval = 100; // Update every 100ms
+            const increment = 100 / (totalDuration / interval);
+            
+            const percentageInterval = setInterval(() => {
+                percentage += increment;
+                if (percentage >= 100) {
+                    percentage = 100;
+                    clearInterval(percentageInterval);
+                }
+                percentageValue.textContent = Math.floor(percentage);
+            }, interval);
+        }
     }
 });
 
