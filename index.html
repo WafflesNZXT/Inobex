@@ -27,31 +27,78 @@
         "foundingDate": "2015",
         "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+1-555-123-4567",
+            "telephone": "+1-510-731-8667",
             "contactType": "Customer Service"
         },
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "123 Tech Street",
-            "addressLocality": "Silicon Valley",
+            "streetAddress": "San Francisco",
+            "addressLocality": "San Francisco",
             "addressRegion": "CA",
-            "postalCode": "94025",
             "addressCountry": "US"
-        }
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/inobex-sf"
+        ],
+        "service": [
+            {
+                "@type": "Service",
+                "name": "AI Solutions",
+                "description": "Custom machine learning models and AI systems"
+            },
+            {
+                "@type": "Service",
+                "name": "Cloud Security",
+                "description": "Enterprise-grade security solutions"
+            },
+            {
+                "@type": "Service",
+                "name": "Web Development",
+                "description": "Modern, responsive web applications"
+            },
+            {
+                "@type": "Service",
+                "name": "Data Analytics",
+                "description": "Business intelligence and data insights"
+            },
+            {
+                "@type": "Service",
+                "name": "Automation",
+                "description": "Intelligent workflow automation"
+            },
+            {
+                "@type": "Service",
+                "name": "IT Consulting",
+                "description": "Strategic IT guidance and optimization"
+            }
+        ]
     }
     </script>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <img src="inobexlogo.png" alt="Inobex Logo" class="loading-logo">
+            <h1 class="loading-text">INOBEX</h1>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+            <div class="loading-percentage"><span id="percentageValue">0</span>%</div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="/" class="logo" style="text-decoration: none;">
-                <img src="inobexlogo.png" alt="Inobex Logo" class="logo-img">
+                <img src="inobexlogo.png" alt="Inobex Logo" class="logo-img" loading="lazy">
                 <span class="logo-text">INOBEX</span>
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="/" class="nav-link active">Home</a></li>
                 <li><a href="/services" class="nav-link">Services</a></li>
+                <li><a href="/pricing" class="nav-link">Pricing</a></li>
                 <li><a href="/about" class="nav-link">About</a></li>
                 <li><a href="/contact" class="nav-link">Contact</a></li>
             </ul>
@@ -260,6 +307,85 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <h2 class="section-title">Client Success Stories</h2>
+        <p class="section-subtitle">Real results from companies transforming their business with Inobex</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Inobex transformed our data infrastructure. Their AI models improved our sales forecasting accuracy by 35%, saving us millions in optimized operations."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">TC</div>
+                    <div>
+                        <p class="author-name">Sarah Mitchell</p>
+                        <p class="author-title">Chief Data Officer, TechCorp</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"The security solutions they implemented gave us enterprise-grade protection. Our compliance score improved from 76% to 99%, exceeding industry standards."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MJ</div>
+                    <div>
+                        <p class="author-name">Michael Johnson</p>
+                        <p class="author-title">VP Security, FinanceHub</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Their development team built us a custom platform in 3 months that handles 10x our previous traffic. The technical expertise was unmatched."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">ER</div>
+                    <div>
+                        <p class="author-name">Emma Rodriguez</p>
+                        <p class="author-title">Founder, StartupX</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Implementing Inobex's automation solutions cut our manual processes by 70%. ROI was achieved in just 6 months."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">DK</div>
+                    <div>
+                        <p class="author-name">David Kim</p>
+                        <p class="author-title">Operations Manager, LogistiCo</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Their consulting team provided strategic guidance that positioned us ahead of competitors. Highly recommend for enterprise IT transformation."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">LC</div>
+                    <div>
+                        <p class="author-name">Lisa Chen</p>
+                        <p class="author-title">CTO, GlobalTech</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Outstanding support team. We had issues resolved within hours. Their 24/7 availability has been crucial for our operations."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RW</div>
+                    <div>
+                        <p class="author-name">Robert Walsh</p>
+                        <p class="author-title">IT Manager, RetailPro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-content">
@@ -275,14 +401,17 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <img src="inobexlogo.png" alt="Inobex Logo" class="footer-logo">
+            <img src="inobexlogo.png" alt="Inobex Logo" class="footer-logo" loading="lazy">
             <p>&copy; 2025 Inobex. All rights reserved.</p>
             <div class="social-links">
-                <a href="#">Twitter</a>
-                <a href="https://www.linkedin.com/company/inobex-sf">LinkedIn</a>
-                <a href="#">GitHub</a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a href="https://www.linkedin.com/company/inobex-sf" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
         </div>
     </footer>
+
+    <!-- Chat Coming Soon -->
+    <button id="chatToggle" class="chat-toggle" title="Chat coming soon">💬</button>
 </body>
 </html>

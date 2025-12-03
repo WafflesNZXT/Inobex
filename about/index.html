@@ -18,16 +18,29 @@
     <script src="../script.js" defer></script>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <img src="../inobexlogo.png" alt="Inobex Logo" class="loading-logo">
+            <h1 class="loading-text">INOBEX</h1>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+            <div class="loading-percentage"><span id="percentageValue">0</span>%</div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="/" class="logo" style="text-decoration: none;">
-                <img src="../inobexlogo.png" alt="Inobex Logo" class="logo-img">
+                <img src="../inobexlogo.png" alt="Inobex Logo" class="logo-img" loading="lazy">
                 <span class="logo-text">INOBEX</span>
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="/services" class="nav-link">Services</a></li>
+                <li><a href="/pricing" class="nav-link">Pricing</a></li>
                 <li><a href="/about" class="nav-link active">About</a></li>
                 <li><a href="/contact" class="nav-link">Contact</a></li>
             </ul>
@@ -86,7 +99,7 @@
             <div class="team-grid">
                 <div class="team-member">
                 <div class="member-avatar member-avatar-image">
-                        <img src="20250907_133201 (1).jpg" alt="Shahid Syed">
+                        <img src="20250907_133201 (1).jpg" alt="Shahid Syed" loading="lazy">
                 </div>
                 <h3>Shahid Syed</h3>
                 <p class="member-role">Founder and CEO</p>
@@ -115,7 +128,7 @@
 
                 <div class="team-member">
                     <div class="member-avatar member-avatar-image">
-                        <img src="wafisyedlogoface.png" alt="Wafi Syed">
+                        <img src="wafisyedlogoface.png" alt="Wafi Syed" loading="lazy">
                     </div>
                     <h3>Wafi Syed</h3>
                     <p class="member-role">Development and Security Director</p>
@@ -143,14 +156,17 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <img src="../inobexlogo.png" alt="Inobex Logo" class="footer-logo">
+            <img src="../inobexlogo.png" alt="Inobex Logo" class="footer-logo" loading="lazy">
             <p>&copy; 2025 Inobex. All rights reserved.</p>
             <div class="social-links">
-                <a href="#">Twitter</a>
-                <a href="https://www.linkedin.com/company/inobex-sf">LinkedIn</a>
-                <a href="#">GitHub</a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a href="https://www.linkedin.com/company/inobex-sf" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
         </div>
     </footer>
+
+    <!-- Chat Coming Soon -->
+    <button id="chatToggle" class="chat-toggle" title="Chat coming soon">💬</button>
 </body>
 </html>

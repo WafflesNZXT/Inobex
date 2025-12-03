@@ -18,16 +18,29 @@
     <script src="../script.js" defer></script>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <img src="../inobexlogo.png" alt="Inobex Logo" class="loading-logo">
+            <h1 class="loading-text">INOBEX</h1>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+            <div class="loading-percentage"><span id="percentageValue">0</span>%</div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="/" class="logo" style="text-decoration: none;">
-                <img src="../inobexlogo.png" alt="Inobex Logo" class="logo-img">
+                <img src="../inobexlogo.png" alt="Inobex Logo" class="logo-img" loading="lazy">
                 <span class="logo-text">INOBEX</span>
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="/services" class="nav-link active">Services</a></li>
+                <li><a href="/pricing" class="nav-link">Pricing</a></li>
                 <li><a href="/about" class="nav-link">About</a></li>
                 <li><a href="/contact" class="nav-link">Contact</a></li>
             </ul>
@@ -51,6 +64,16 @@
                 <div class="service-icon">⚙</div>
                 <h3>AI Solutions</h3>
                 <p>Custom machine learning models and AI systems tailored to your business needs. From predictive analytics to natural language processing.</p>
+                <div class="service-details">
+                    <p class="service-subtitle">What's Included:</p>
+                    <ul class="service-list">
+                        <li>Predictive analytics models</li>
+                        <li>Natural language processing</li>
+                        <li>Computer vision solutions</li>
+                        <li>Custom algorithm development</li>
+                    </ul>
+                </div>
+                <button class="service-toggle">Learn More ↓</button>
             </div>
             
             <div class="service-card">
@@ -59,6 +82,16 @@
                 <div class="service-icon">🔐</div>
                 <h3>Cloud Security</h3>
                 <p>Enterprise-grade security solutions with multi-layer protection, compliance management, and threat detection systems.</p>
+                <div class="service-details">
+                    <p class="service-subtitle">What's Included:</p>
+                    <ul class="service-list">
+                        <li>Multi-layer security architecture</li>
+                        <li>Compliance management (HIPAA, SOC 2)</li>
+                        <li>Threat detection & response</li>
+                        <li>Security audits & assessments</li>
+                    </ul>
+                </div>
+                <button class="service-toggle">Learn More ↓</button>
             </div>
             
             <div class="service-card">
@@ -67,6 +100,16 @@
                 <div class="service-icon">💻</div>
                 <h3>Web Development</h3>
                 <p>Modern, responsive web applications built with latest technologies. Full-stack development for maximum performance.</p>
+                <div class="service-details">
+                    <p class="service-subtitle">What's Included:</p>
+                    <ul class="service-list">
+                        <li>Responsive UI/UX design</li>
+                        <li>Full-stack development</li>
+                        <li>API integration & development</li>
+                        <li>Performance optimization</li>
+                    </ul>
+                </div>
+                <button class="service-toggle">Learn More ↓</button>
             </div>
             
             <div class="service-card">
@@ -75,6 +118,16 @@
                 <div class="service-icon">📊</div>
                 <h3>Data Analytics</h3>
                 <p>Transform raw data into actionable insights. Real-time dashboards, reporting, and business intelligence solutions.</p>
+                <div class="service-details">
+                    <p class="service-subtitle">What's Included:</p>
+                    <ul class="service-list">
+                        <li>Real-time dashboards</li>
+                        <li>Advanced reporting tools</li>
+                        <li>Data visualization</li>
+                        <li>KPI tracking & analysis</li>
+                    </ul>
+                </div>
+                <button class="service-toggle">Learn More ↓</button>
             </div>
             
             <div class="service-card">
@@ -83,6 +136,16 @@
                 <div class="service-icon">🤖</div>
                 <h3>Automation</h3>
                 <p>Streamline your workflows with intelligent automation. Reduce manual work and increase operational efficiency.</p>
+                <div class="service-details">
+                    <p class="service-subtitle">What's Included:</p>
+                    <ul class="service-list">
+                        <li>Workflow automation</li>
+                        <li>RPA implementation</li>
+                        <li>Integration automation</li>
+                        <li>Process optimization</li>
+                    </ul>
+                </div>
+                <button class="service-toggle">Learn More ↓</button>
             </div>
             
             <div class="service-card">
@@ -91,6 +154,48 @@
                 <div class="service-icon">🔧</div>
                 <h3>IT Consulting</h3>
                 <p>Strategic IT guidance for digital transformation. Infrastructure planning, system optimization, and technology roadmaps.</p>
+                <div class="service-details">
+                    <p class="service-subtitle">What's Included:</p>
+                    <ul class="service-list">
+                        <li>Technology strategy</li>
+                        <li>Infrastructure planning</li>
+                        <li>Digital transformation roadmaps</li>
+                        <li>System optimization</li>
+                    </ul>
+                </div>
+                <button class="service-toggle">Learn More ↓</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demos Section -->
+    <section class="video-demos">
+        <h2 class="section-title">See Our Solutions in Action</h2>
+        <p class="section-subtitle">Watch how Inobex transforms businesses with innovative AI and IT solutions</p>
+        
+        <div class="videos-grid">
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe width="100%" height="300" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="AI Solutions Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <h3>AI Solutions Demo</h3>
+                <p>See how our machine learning models drive predictive analytics and business insights</p>
+            </div>
+
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe width="100%" height="300" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Cloud Security Overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <h3>Cloud Security Overview</h3>
+                <p>Learn how we protect your enterprise with multi-layer security architecture</p>
+            </div>
+
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe width="100%" height="300" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Client Success Story" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <h3>Client Success Story</h3>
+                <p>Hear directly from one of our clients about their transformation journey</p>
             </div>
         </div>
     </section>
@@ -108,14 +213,17 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <img src="../inobexlogo.png" alt="Inobex Logo" class="footer-logo">
+            <img src="../inobexlogo.png" alt="Inobex Logo" class="footer-logo" loading="lazy">
             <p>&copy; 2025 Inobex. All rights reserved.</p>
             <div class="social-links">
-                <a href="#">Twitter</a>
-                <a href="https://www.linkedin.com/company/inobex-sf">LinkedIn</a>
-                <a href="#">GitHub</a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a href="https://www.linkedin.com/company/inobex-sf" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
         </div>
     </footer>
+
+    <!-- Chat Coming Soon -->
+    <button id="chatToggle" class="chat-toggle" title="Chat coming soon">💬</button>
 </body>
 </html>
