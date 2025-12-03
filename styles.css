@@ -724,6 +724,120 @@ body.dark-mode .hero::before {
     color: var(--accent);
 }
 
+/* Team Section */
+.team {
+    padding: 4rem 2rem;
+    background: var(--bg-color);
+}
+
+.team-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.team-member {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.1);
+}
+
+.member-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.member-avatar-image {
+    background: none;
+    overflow: hidden;
+}
+
+.member-avatar-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-initial {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.team-member h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.member-role {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.member-bio {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.member-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.skill-tag {
+    display: inline-block;
+    background: rgba(0, 217, 255, 0.1);
+    color: var(--primary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+/* Dark mode adjustments for team section */
+body.dark-mode .team-member:hover {
+    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+}
+
 /* Featured Banner */
 .featured-banner {
     background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(131, 56, 236, 0.1));
@@ -1476,6 +1590,28 @@ body.dark-mode .feature-list li {
         gap: 1rem;
         font-size: 0.85rem;
     }
+
+    /* Team Section Responsive */
+    .team {
+        padding: 3rem 1rem;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .team-member {
+        padding: 2rem 1.5rem;
+    }
+
+    .member-role {
+        font-size: 0.9rem;
+    }
+
+    .member-bio {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1715,5 +1851,45 @@ body.dark-mode .feature-list li {
     .corner-accent {
         width: 30px;
         height: 30px;
+    }
+
+    /* Team Section Mobile */
+    .team {
+        padding: 2rem 0.8rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .team-member {
+        padding: 1rem;
+    }
+
+    .member-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .avatar-initial {
+        font-size: 2rem;
+    }
+
+    .team-member h3 {
+        font-size: 1.1rem;
+    }
+
+    .member-role {
+        font-size: 0.85rem;
+    }
+
+    .member-bio {
+        font-size: 0.8rem;
+    }
+
+    .skill-tag {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
     }
 }
