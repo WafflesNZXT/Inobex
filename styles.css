@@ -2235,10 +2235,12 @@ body.dark-mode .feature-list li {
 
 /* Pricing Page */
 .pricing {
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
     background: var(--bg-color);
-    margin-top: 100px;
-    padding-top: 5rem;
+    margin-top: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .pricing-content {
@@ -2489,8 +2491,8 @@ body.dark-mode .feature-list li {
 /* Responsive Pricing */
 @media (max-width: 768px) {
     .pricing {
-        padding: 5rem 1rem 3rem 1rem;
-        margin-top: 80px;
+        padding: 3rem 1rem;
+        margin-top: 60px;
     }
 
     .pricing-card.featured {
@@ -2831,7 +2833,7 @@ body.dark-mode .feature-list li {
 
 @media (max-width: 480px) {
     .pricing {
-        padding: 5rem 0.8rem 2rem 0.8rem;
+        padding: 2rem 0.8rem;
         margin-top: 60px;
     }
 
