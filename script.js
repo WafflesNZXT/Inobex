@@ -161,31 +161,51 @@ if (contactForm) {
             return;
         }
         
-        console.log('Form submitted:', {
-            name,
-            email,
-            subject,
-            message
-        });
-        
-        // Show success message
-        const formMessage = document.getElementById('formMessage');
-        formMessage.className = 'form-message success';
-        formMessage.textContent = '✓ Message sent successfully! We\'ll get back to you soon.';
-        formMessage.style.display = 'block';
-        
+        // Show sending message
         const submitButton = contactForm.querySelector('.submit-button');
         const originalText = submitButton.textContent;
         submitButton.textContent = 'Sending...';
         submitButton.disabled = true;
         
-        // Reset after 3 seconds
-        setTimeout(() => {
-            contactForm.reset();
-            formMessage.style.display = 'none';
+        // Submit to Formspree
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                // Show success message
+                const formMessage = document.getElementById('formMessage');
+                formMessage.className = 'form-message success';
+                formMessage.textContent = '✓ Message sent successfully! We\'ll get back to you soon.';
+                formMessage.style.display = 'block';
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                }, 3000);
+            } else {
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(error => {
+            // Show error message
+            const formMessage = document.getElementById('formMessage');
+            formMessage.className = 'form-message error';
+            formMessage.textContent = '✗ Failed to send message. Please try again.';
+            formMessage.style.display = 'block';
+            
             submitButton.textContent = originalText;
             submitButton.disabled = false;
-        }, 3000);
+        });
     });
 }
 
