@@ -1821,6 +1821,19 @@ body.dark-mode .feature-list li {
         font-size: 0.85rem;
     }
 
+    /* Video Coming Soon */
+    .coming-soon-icon {
+        font-size: 2.5rem;
+    }
+
+    .coming-soon-content h4 {
+        font-size: 1.2rem;
+    }
+
+    .coming-soon-content p {
+        font-size: 0.9rem;
+    }
+
     /* About */
     .stats {
         grid-template-columns: 1fr;
