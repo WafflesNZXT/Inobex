@@ -2561,6 +2561,42 @@ body.dark-mode .feature-list li {
     border: none;
 }
 
+.video-coming-soon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.coming-soon-content {
+    text-align: center;
+    color: white;
+}
+
+.coming-soon-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.coming-soon-content h4 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    font-weight: 700;
+}
+
+.coming-soon-content p {
+    font-size: 1rem;
+    margin: 0.5rem 0 0;
+    opacity: 0.9;
+}
+
 .video-card h3 {
     font-size: 1.2rem;
     color: var(--text-primary);
