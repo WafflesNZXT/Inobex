@@ -697,20 +697,77 @@ body.dark-mode .hero::before {
 }
 
 .info-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .info-card h3 {
     color: var(--primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .info-card p {
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.8;
+    font-size: 1.3rem;
+}
+
+/* Locations Section */
+.locations-section {
+    padding: 3rem 2rem;
+    background: var(--darker-bg);
+}
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.location-card {
+    background: var(--card-bg);
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.location-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 153, 204, 0.2);
+}
+
+.location-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.location-pin-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.location-card h3 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+}
+
+.location-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 1.1rem;
 }
 
 /* Footer */
@@ -1551,6 +1608,23 @@ body.dark-mode .feature-list li {
 
     .info-icon {
         font-size: 1.8rem;
+    }
+
+    .locations-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .location-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .location-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .location-card p {
+        font-size: 1rem;
     }
 
     /* FAQ Section */
@@ -4057,6 +4131,10 @@ body.dark-mode .feature-list li {
     .job-detail-meta {
         flex-direction: column;
         gap: 0.5rem;
+    }
+
+    .locations-grid {
+        grid-template-columns: 1fr;
     }
 }
 

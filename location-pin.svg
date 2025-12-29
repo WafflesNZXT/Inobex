@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="64" height="64">
+  <defs>
+    <style>
+      .pin-outer { fill: #E63946; }
+      .pin-inner { fill: #C1121F; }
+      .pin-circle { fill: #FFFFFF; }
+    </style>
+  </defs>
+  <!-- Outer pin shape -->
+  <path class="pin-outer" d="M256,0 C171.6,0 100,71.6 100,156 C100,278 256,512 256,512 S412,278 412,156 C412,71.6 340.4,0 256,0 Z"/>
+  <!-- Inner circle -->
+  <circle class="pin-circle" cx="256" cy="156" r="56"/>
+  <!-- Inner circle darker ring -->
+  <circle class="pin-inner" cx="256" cy="156" r="40" fill="none" stroke="#C1121F" stroke-width="8"/>
+</svg>
